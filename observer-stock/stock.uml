@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="0.0" y="727.0">observer.StockObserverTwo</node>
+    <node x="323.0" y="1191.0">com</node>
+    <node x="-93.0" y="-188.0">HTMLConverter</node>
+    <node x="669.0" y="709.0">subject.StockSubject</node>
+    <node x="531.0" y="1085.0">netscape</node>
+    <node x="719.0" y="1085.0">oracle</node>
+    <node x="778.0" y="1136.0">org</node>
+    <node x="565.5825003235819" y="594.3741949536453">StockGUI</node>
+    <node x="382.0" y="1117.0">templates</node>
+    <node x="183.5" y="626.0">observer.Observer</node>
+    <node x="189.0" y="1117.0">resources</node>
+    <node x="292.0" y="738.0">observer.StockObserverOne</node>
+    <node x="788.5" y="557.0">subject.Subject</node>
+    <node x="538.0" y="345.0">toolbarButtonGraphics</node>
+    <node x="594.0" y="1159.0">sun</node>
+    <node x="-5.0" y="1117.0">META-INF</node>
+    <node x="914.0" y="1129.0">jdk</node>
+    <node x="-5.0" y="1191.0">apple</node>
+    <node x="481.0" y="1191.0">java</node>
+    <node x="160.0" y="1191.0">javax</node>
+    <node x="879.0" y="1082.0">javafx</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="subject.StockSubject" target="subject.Subject">
+      <point x="0.0" y="-136.5" />
+      <point x="0.0" y="47.5" />
+    </edge>
+    <edge source="StockGUI" target="observer.StockObserverOne">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="observer.StockObserverTwo" target="observer.Observer">
+      <point x="0.0" y="-92.5" />
+      <point x="136.0" y="702.0" />
+      <point x="230.25" y="702.0" />
+      <point x="-46.75" y="25.5" />
+    </edge>
+    <edge source="StockGUI" target="observer.StockObserverTwo">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="observer.StockObserverOne" target="observer.Observer">
+      <point x="0.0" y="-81.5" />
+      <point x="418.0" y="702.0" />
+      <point x="323.75" y="702.0" />
+      <point x="46.75" y="25.5" />
+    </edge>
+    <edge source="subject.StockSubject" target="observer.Observer">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+    <edge source="StockGUI" target="subject.StockSubject">
+      <point x="0.0" y="0.0" />
+      <point x="0.0" y="0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9106167862584909" x="565.8880735393768" y="785.0574055426405" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
