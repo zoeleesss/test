@@ -1,0 +1,193 @@
+//
+//  main.c
+//  fork
+//
+//  Created by zoe lee on 23/11/2017.
+//  Copyright © 2017 zoelee. All rights reserved.
+//
+
+#include <unistd.h>
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+
+    pid_t fpid,fpid_new;
+    int count=0;
+    fpid=fork();
+    
+    if (fpid<0)
+        printf("error in fork!");
+    else if (fpid==0)
+    {
+        printf("\nChild1 : %d",getpid());
+        //printf("\nb");
+        
+    }
+    else{
+        fpid_new=fork(); if (fpid_new<0) printf("error in fork!");
+        else if (fpid_new==0)
+        {
+            printf("\nChild2 : %d",getpid());
+            //printf("\nc");
+        }
+        else{
+            printf("\nParent : %d",getpid());
+            //printf("\na");
+        }
+
+    }
+   
+    printf("\n");
+    return 0;
+}
+
+
+
+//
+//  hello.c
+//  fork
+//
+//  Created by zoe lee on 23/11/2017.
+//  Copyright © 2017 zoelee. All rights reserved.
+//
+
+#include <stdio.h>
+int main(int argc, const char * argv[]) {
+
+    printf("hello\n");
+    return 0;
+}
+      
+
+
+//
+//  main.c
+//  fork
+//
+//  Created by zoe lee on 23/11/2017.
+//  Copyright © 2017 zoelee. All rights reserved.
+//
+
+#include <unistd.h>
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+
+    pid_t fpid;
+    
+    fpid=fork();
+    
+    if (fpid<0)
+        printf("error in fork!");
+    else if (fpid==0)
+    {
+        printf("\nChild1 : %d",getpid());
+        printf("\nChild1 : %d",getpid());
+        execle("/Users/sss/Desktop/C++/fork/fork/hello","hello",NULL);
+        //printf("\nb");
+        
+    }
+    else{
+            printf("\nParent : %d",getpid());
+            //printf("\na");
+
+    }
+   
+    printf("\n");
+    return 0;
+}
+
+
+//
+//  main.c
+//  fork
+//
+//  Created by zoe lee on 23/11/2017.
+//  Copyright © 2017 zoelee. All rights reserved.
+//
+
+#include <unistd.h>
+#include <stdio.h>
+
+int main(int argc, const char * argv[]) {
+
+    pid_t fpid,fpid1,fpid2,fpid3;
+   
+    fpid=fork();
+    
+    if (fpid<0)
+        printf("error in fork!");
+    else if (fpid==0)   //first child
+    {
+        //printf("\nChild1Pid : %d",getpid());
+        //printf("\nCurrentPID : %d ParentPID : %d",getpid(),getppid());
+        
+        fpid1=fork();
+        
+        if (fpid1<0)
+            printf("error in fork!");
+        else if (fpid1==0)   //left child
+        {
+            //printf("\nChild2Pid : %d",getpid());
+            
+            fpid2=fork();   //create left left child
+            
+            
+            if (fpid2<0)
+                printf("error in fork!");
+            else if (fpid2==0)
+            {
+                //printf("\nChild4 : %d",getpid());
+                printf("\nCurrent4PID : %d ParentPID : %d",getpid(),getppid());
+
+            }
+            else{
+                //printf("\nChild2 : %d",getpid());
+                //printf("\na");
+                wait(NULL);
+
+                printf("\nCurrent2PID : %d ParentPID : %d",getpid(),getppid());
+
+                
+            }
+
+            
+            
+        }
+        else{           //first child
+          
+            fpid3=fork();   //create right child
+            
+            if (fpid3<0)
+                printf("error in fork!");
+            else if (fpid3==0)
+            {
+                //printf("\nChild3 : %d",getpid());
+                printf("\nCurrent3PID : %d ParentPID : %d",getpid(),getppid());
+                
+            }
+            else{
+                wait(NULL);
+
+                printf("\nCurrent1PID : %d ParentPID : %d",getpid(),getppid());
+                //printf("\na");
+                
+            }
+
+            
+        }
+   
+    }
+    else{
+        wait(NULL);
+        wait(NULL);
+
+            printf("\nCurrent0PID : %d ParentPID : %d",getpid(),getppid());
+            //printf("\na");
+
+    }
+   
+    printf("\n");
+    return 0;
+}
+
